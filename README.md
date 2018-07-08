@@ -1,4 +1,62 @@
+gojsonq
+===============
+
+A simple Go package to Query over JSON Data
+
+
 ![gojsonq-logo](https://cdn.hashnode.com/res/hashnode/image/upload/w_800,c_thumb/v1528991620699/ry6YJMx-m.jpeg)
+
+
+### Installation
+
+Install the package using
+```go
+$ go get github.com/thedevsaddam/gojsonq
+```
+
+### Usage
+
+To use the package import it in your `*.go` code
+```go
+import "github.com/thedevsaddam/gojsonq"
+```
+
+Let's see a quick example:
+
+```go
+package main
+
+import "github.com/thedevsaddam/gojsonq"
+
+const json = `{"name":{"first":"Tom","last":"Hanks"},"age":61}`
+
+func main() {
+	name := gojsonq.New().JSONString(json).Find("name.first")
+	println(name.(string)) // Tom
+}
+
+```
+
+Another example:
+
+```go
+package main
+
+import (
+	"fmt"
+
+	"github.com/thedevsaddam/gojsonq"
+)
+
+const json = `{"city":"dhaka","type":"weekly","temperatures":[30,39.9,35.4,33.5,31.6,33.2,30.7]}`
+
+func main() {
+	avg := gojsonq.New().JSONString(json).From("temperatures").Avg()
+	fmt.Println(avg) // 33.471428571428575
+}
+
+```
+
 
 ## API for different queries
 
