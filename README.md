@@ -242,6 +242,15 @@ fmt.Printf("%#v\n", jq.Get())
 }
 ```
 
+**Note:** You can also select nested property and use **alias** to the property, see the example below:
+
+```go
+jq := gojsonq.New().File("./data.json").From("users").Select("id", "user.name as uname", "user.followers")
+fmt.Printf("%#v\n", jq.Get())
+```
+
+
+
 ### `where(key, op, val)`
 
 * `key` -- the property name of the data.
