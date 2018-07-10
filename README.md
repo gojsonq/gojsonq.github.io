@@ -726,3 +726,7 @@ res := jq.Get()
 err := jq.Error() // if err != nil do something, may show the error list using jq.Errors() method
 fmt.Printf("Error: %v\nResult: %#v\n", err, res)
 ```
+
+> **If you like the idea don't forget to put a *Star* on the repository, it inspires author to do some more for the [package](https://github.com/thedevsaddam/gojsonq)**
+
+__Share your thoughts, idea or any bug report by creating an issue__
