@@ -1,4 +1,4 @@
-gojsonq
+[gojsonq](https://github.com/thedevsaddam/gojsonq)
 ===============
 
 A simple Go package to Query over JSON Data
